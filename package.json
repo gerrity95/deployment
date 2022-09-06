@@ -1,0 +1,16 @@
+{
+  "name": "deployment",
+  "version": "1.0.0",
+  "description": "Simple app to trigger a deployment through web ui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark Gerrity",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "pm2": "^5.2.0"
+  }
+}
