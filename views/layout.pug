@@ -1,0 +1,41 @@
+
+doctype html
+html(lang="en")
+  head
+    leta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/css/styles.css')
+    link(href='https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Roboto+Slab&display=swap' rel='stylesheet')
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet")
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css')
+    script(src='https://code.jquery.com/jquery-3.5.1.min.js')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+    
+  body
+
+    // Navigation
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light.static-top.mb-5.shadow
+      .container
+        a.navbar-brand(href='#') MGGert Deployment
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        //- #navbarResponsive.collapse.navbar-collapse
+        //-   ul.navbar-nav.ms-auto
+        //-     li.nav-item.active
+        //-       a.nav-link(href='#') Home
+        //-     li.nav-item
+        //-       a.nav-link(href='#') About
+        //-     li.nav-item
+        //-       a.nav-link(href='#') Services
+        //-     li.nav-item
+        //-       a.nav-link(href='#') Contact
+
+
+    //include includes/loading_modal.pug
+    
+    #content
+
+      // We'll fill this with dummy content
+      block content

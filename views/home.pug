@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  title - Deployment - Home
+
+  // Page Content
+  .container-fluid(style="width: 90%")
+    .row.border-0.shadow(style="background-color: #fff;padding-top: 10%;padding-bottom: 10%;border-radius:5px")
+      .col-10.col-sm-10.col-md-5.col-lg-4.col-xl-4.offset-xl-1.offset-lg-1.offset-md-1.offset-1.text-center
+          img(src='/images/pandaren_logo.png', style="width:80%")
+          p Deployment
+          form
+            button.btn.btn-primary(type='submit' style="padding-left: 15px;padding-right: 15px") Deploy
+      .col-12.col-sm-10.col-md-5.col-lg-5.col-xl-5.offset-xl-1.offset-lg-1.offset-md-1.offset-0.align-self-center.row_style
+        h4.text-center.white_text
+          | What do we do? 🎬
+        p.white_text
+          | Our aim is to provide a simple way to generate movie recommendations tailored to each individual user. Everyone has at spent at least an evening or two scrolling through movies on Netflix or Amazon Prime not knowing what to watch. We want to make this as easy as possible.   
+        p.white_text
+          | What we do is ask every user to rate five of their favorite movies. Once we get that many we can start generating recommendations. 
+        p.white_text
+          | As with anything, the more you rate, the more accurate we get. This works for movies you dont like as well. Not a fan of Marvel? If we can identify these kind of trends we'll try our best to avoid recommending similar movies.
+        p.white_text
+          | All the recommended movies are assigned a weight. This weight indicates how much we think you'd enjoy the movie. The higher the weight, the more we think you'll like it. As you rate more movies the weight will change for each of the movies you haven't yet rated. 
