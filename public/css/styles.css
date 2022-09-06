@@ -6,3 +6,41 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+
+/* button style */
+
+.custom_button {
+  background-color: #A178CF;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: larger;
+  width: 50%;
+}
+
+.custom_button:hover {
+  background-color: #505F98;
+  color: #ffffff;
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: larger;
+}
+
+.alt_button {
+  background-color: #FFD166;
+  color: #505F98;
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: larger;
+}
+
+.alt_button:hover {
+  background-color: #A178CF;
+  color: #ffffff;
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: larger;
+}
