@@ -6,17 +6,48 @@ block content
   // Page Content
   .container-fluid(style="width: 80%")
     .row
-      .col-10.col-sm-10.col-md-5.col-lg-4.col-xl-4.offset-xl-1.offset-lg-1.offset-md-1.offset-1.text-center.border-0.shadow(style="background-color: #fff;padding-top: 5%;padding-bottom: 5%;border-radius:5px")
+      .col-10.col-sm-10.col-md-5.col-lg-5.col-xl-4.offset-xl-1.offset-lg-1.offset-md-1.offset-1.text-center.border-0.shadow(style="background-color: #fff;padding-top: 5%;padding-bottom: 5%;border-radius:5px")
           h1 PlannR
           .col-12(style="min-height: 400px")
             img(src='/images/pizza_logo.png', style="width:80%;")
           h5 Deploy a new version of the PlannR backend.
-          form(style="margin-top: 20px;")
-            button.btn.alt_button(type='submit' style="padding-left: 15px;padding-right: 15px") Deploy
-      .col-10.col-sm-10.col-md-5.col-lg-4.col-xl-4.offset-xl-2.offset-lg-1.offset-md-1.offset-1.text-center.border-0.shadow(style="background-color: #fff;padding-top: 5%;padding-bottom: 5%;border-radius:5px")
+          a#plannrSubmit.btn.alt_button(href='plannr' style="padding-left: 15px;padding-right: 15px;margin-top: 25px;") Deploy
+      .col-10.col-sm-10.col-md-5.col-lg-5.col-xl-4.offset-xl-2.offset-lg-1.offset-md-1.offset-1.text-center.border-0.shadow(style="background-color: #fff;padding-top: 5%;padding-bottom: 5%;border-radius:5px")
           h1 What To Watch
           .col-12(style="min-height: 400px")
             img(src='/images/what_to_watch_black.png', style="width:80%")
           h5 Deploy a new version of WhatToWatch
-          form(style="margin-top: 20px;")
-            button.btn.custom_button(type='submit') Deploy
+          a#watchSubmit.btn.custom_button(href='whattowatch' style="padding-left: 15px;padding-right: 15px;margin-top: 25px;") Deploy
+
+  script.
+
+        // handle button click
+      $("#plannrSubmit, #watchSubmit").click(function(e) {
+          console.log('hello');
+          e.preventDefault();
+          var deploymentType = ($(this).attr('href'));
+          $("#loadingModal").modal({backdrop: 'static', keyboard: false});
+          $.ajax({
+              type: "POST",
+              url: '/deploy',
+              dataType: "json",
+              data: {deploymentType: deploymentType},
+              success: function(data){
+                if (data.success) {
+                  $("#successModal").modal('show');
+                  $("#loadingModal").modal('hide');
+                }
+                else {
+                  $("#failedModal").modal('show');
+                  $("#loadingModal").modal('hide');
+                }
+              },
+              error: function(jqXHR, textStatus, errorThrown){
+                console.log("Failed Deployment")
+                console.log(errorThrown);
+                $("#failedModal").modal('show');
+                $("#loadingModal").modal('hide');
+
+              }              
+          });
+      });

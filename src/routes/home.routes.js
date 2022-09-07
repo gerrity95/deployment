@@ -5,4 +5,6 @@ const indexController = require('../controllers/home.controller');
 
 router.get('/', indexController.home);
 
+router.post('/deploy', indexController.deploy);
+
 module.exports = router;
