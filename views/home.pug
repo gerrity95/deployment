@@ -17,12 +17,16 @@ block content
           .col-12(style="min-height: 400px")
             img(src='/images/what_to_watch_black.png', style="width:80%")
           h5 Deploy a new version of WhatToWatch
-          a#watchSubmit.btn.custom_button(href='whattowatch' style="padding-left: 15px;padding-right: 15px;margin-top: 25px;") Deploy
+          .row
+            .col-12
+              a#watchSubmit.btn.custom_button(href='whattowatch' style="padding-left: 15px;padding-right: 15px;margin-top: 25px;") Deploy Frontend
+            .col-12
+              a#watchBackendSubmit.btn.custom_button(href='whattowatch_backend' style="padding-left: 15px;padding-right: 15px;margin-top: 25px;") Deploy Backend
 
   script.
 
         // handle button click
-      $("#plannrSubmit, #watchSubmit").click(function(e) {
+      $("#plannrSubmit, #watchBackendSubmit, #watchSubmit").click(function(e) {
           console.log('hello');
           e.preventDefault();
           var deploymentType = ($(this).attr('href'));
